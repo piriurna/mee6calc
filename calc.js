@@ -11,6 +11,10 @@ function calculate()
     //Magical math functions
     var xp_to_desired_level = 5 / 6 * desired_level * (2 * desired_level * desired_level + 27 * desired_level + 91);
     var xp_needed = xp_to_desired_level - current_xp;
+    var time_needed = (xp_to_desired_level - current_xp) / 2000;
+
+    var years_needed = Math.trunc(time_needed / 365);
+    var days_needed = Math.trunc(time_needed - years_needed * 365);
 
     //Minimum, average, and maximum messages needed to send in order to reach specified level
     var min_messages_needed_to_send = Math.ceil(xp_needed / max_xp_gain_per_message);
@@ -20,6 +24,8 @@ function calculate()
     //Display information to user
     document.getElementById("result-average").innerHTML = avg_messages_needed_to_send;
     document.getElementById("result-xp-needed").innerHTML = xp_needed;
+    document.getElementById("result-time-needed_years").innerHTML = years_needed;
+    document.getElementById("result-time-needed_days").innerHTML = days_needed;
     document.getElementById("result-minimum-messages-requirement").innerHTML = min_messages_needed_to_send;
     document.getElementById("result-maximum-messages-requirement").innerHTML = max_messages_needed_to_send;
 }

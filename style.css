@@ -114,6 +114,13 @@ body
     font-weight: lighter;
 }
 
+.result-time-left
+{
+    font-style: italic;
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+
 .result-max-min-messages
 {
     display: flex;
